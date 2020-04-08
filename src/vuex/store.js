@@ -57,4 +57,32 @@ export default {
       };
     },
   },
+
+  /**
+   * 可以有异步操作，最终同步执行 mutations
+   */
+
+  actions: {
+    // incrementAsync(context) {
+    //   // console.log(context);
+    //   // context
+    //   setTimeout(() => {
+    //     context.commit("increment");
+    //   }, 1000);
+    // },
+
+    incrementAsync({ commit }) {
+      return new Promise((resolve) => {
+        setTimeout(() => {
+          commit("increment");
+          resolve("第一个 action 完成");
+        }, 1000);
+      });
+    },
+    async incrementAsync2({ commit, dispatch }) {
+      const resStr = await dispatch("incrementAsync");
+      console.log(resStr);
+      commit("increment");
+    },
+  },
 };

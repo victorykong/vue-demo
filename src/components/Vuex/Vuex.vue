@@ -14,12 +14,16 @@
     <p>
       <button @click="addObjName">为 store 中的对象添加属性</button>
     </p>
+
+    <p>
+      <button @click="incrementAsync2">异步修改 count</button>
+    </p>
   </div>
 </template>
 
 <script>
 // 不需要使用到辅助函数, this.$store 会反应 vuex 中所有的信息
-import { mapState, mapGetters } from "vuex";
+import { mapState, mapGetters, mapActions } from "vuex";
 
 import { ADD_TODO, ADD_NAME } from "../../vuex/mutations-type";
 
@@ -63,8 +67,15 @@ export default {
     },
 
     addObjName() {
+      // this.$store.commit(ADD_NAME, { name: "victorykong" });
       this.$store.commit(ADD_NAME, { name: "victorykong" });
     },
+
+    ...mapActions(["incrementAsync2"]),
+
+    // incrementAsync() {
+    //   this.$store.dispatch("incrementAsync");
+    // },
   },
 };
 </script>
