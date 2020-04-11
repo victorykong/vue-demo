@@ -24,6 +24,10 @@
       <!-- 通过 this 的方式访问 store -->
       <button @click="thisToStore">store</button>
     </p>
+
+    <p>
+      {{ data }}
+    </p>
   </div>
 </template>
 
@@ -31,6 +35,12 @@
 import { mapState } from "vuex";
 
 export default {
+  props: {
+    data: {
+      type: Number,
+      default: 0,
+    },
+  },
   created() {
     console.log(this.$store);
   },

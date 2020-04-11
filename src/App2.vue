@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <VuexModule />
+    <VuexModule :data="123" />
     <!-- <VuexCom /> -->
     <!-- <GrammarTest /> -->
     <!-- <p>

@@ -1,8 +1,6 @@
 <template>
   <div>
-    <keep-alive>
-      <count />
-    </keep-alive>
+    <count />
   </div>
 </template>
 
@@ -18,15 +16,15 @@ export default {
    * keep-alive 会触发的钩子
    */
   activated() {
-    console.log("activated");
+    console.log("router1 activated");
   },
   deactivated() {
-    console.log("deactivated");
+    console.log("router1 deactivated");
   },
 
   components: {
-    count,
-  },
+    count
+  }
 };
 </script>
 
