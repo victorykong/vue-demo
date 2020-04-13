@@ -1,10 +1,14 @@
 <template>
   <!-- slot -->
-  <SlotC />
+  <!-- <SlotC /> -->
+
+  <!-- v-model -->
+  <VModalC />
 </template>
 
 <script>
-import SlotC from "./SolveQuestion/Example2/SlotC/Index";
+// import SlotC from "./SolveQuestion/Example2/SlotC/Index";
+import VModalC from "./SolveQuestion/Example2/VModalC";
 export default {
   name: "App4",
   data() {
@@ -12,7 +16,8 @@ export default {
   },
 
   components: {
-    SlotC
+    // SlotC,
+    VModalC
   }
 };
 </script>
